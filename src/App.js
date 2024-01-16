@@ -1,10 +1,10 @@
-
 import './App.css';
+import ListaJogos from './ListaJogos';
 
 function App() {
   return (
     <div className="App">
-      OI
+      <ListaJogos />
     </div>
   );
 }
