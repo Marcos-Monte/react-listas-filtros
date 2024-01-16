@@ -1,11 +1,13 @@
 import './App.css';
-import ListaJogos from './ListaJogos';
+import Rotas from './Rotas';
 
 function App() {
   return (
+
     <div className="App">
-      <ListaJogos />
+      <Rotas />
     </div>
+
   );
 }
 

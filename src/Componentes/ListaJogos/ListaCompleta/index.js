@@ -1,29 +1,10 @@
 import React from 'react';
-import jogosExclusivos from '../Dados';
-import ItemJogos from '../ItemJogos';
-
-import LogoNintendo from '../assets/nintendo.jpg';
-import LogoPlay from '../assets/playstation.jpg';
-import LogoXbox from '../assets/xbox.png';
+import jogosExclusivos from '../../../Dados';
+import ItemJogos from '../../ItemJogos';
 
 import './style.css';
 
-
 function ListaJogos() {
-
-    function imagem(plataforma) {
-
-        switch (plataforma) {
-            case 'xbox':
-                return LogoXbox;
-
-            case 'playstation':
-                return LogoPlay;
-
-            default:
-                return LogoNintendo;
-        }
-    }
 
     return (
         <div className="lista">
@@ -40,7 +21,7 @@ function ListaJogos() {
 
                             <ItemJogos
                                 key={jogo.id}
-                                imagem={imagem(jogo.plataforma)}
+
                                 nome={jogo.nome}
                                 plataforma={jogo.plataforma}
                             />
