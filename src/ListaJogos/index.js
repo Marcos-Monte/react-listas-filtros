@@ -1,10 +1,12 @@
 import React from 'react';
+import jogosExclusivos from '../Dados';
 import ItemJogos from '../ItemJogos';
-import jogosExclusivos from '../Jogos';
 
 import LogoNintendo from '../assets/nintendo.jpg';
 import LogoPlay from '../assets/playstation.jpg';
 import LogoXbox from '../assets/xbox.png';
+
+import './style.css';
 
 
 function ListaJogos() {

@@ -1,5 +1,7 @@
 import React from 'react';
 
+import './style.css';
+
 function ItemJogos({ nome, plataforma, imagem }) {
 
     return (

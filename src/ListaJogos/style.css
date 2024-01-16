@@ -1,0 +1,16 @@
+.lista {
+    max-width: 600px;
+    margin: 5em auto;
+    text-align: center;
+}
+
+.lista-titulo {
+    font-size: 42px;
+}
+
+.lista-conteudo {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    margin: 2em 0;
+}
