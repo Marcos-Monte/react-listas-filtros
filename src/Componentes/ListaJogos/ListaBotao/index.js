@@ -6,7 +6,11 @@ import Header from '../../Header';
 
 import './style.css';
 
-function ListaCompleta() {
+function ListaBotao() {
+
+    const jogosFiltrados = jogosExclusivos.filter(
+        (jogo) => jogo.plataforma === 'xbox'
+    )
 
     return (
         <div>
@@ -21,7 +25,7 @@ function ListaCompleta() {
                 <div className="lista-conteudo">
 
                     {
-                        jogosExclusivos.map(
+                        jogosFiltrados.map(
                             (jogo) => (
 
                                 <ItemJogos
@@ -42,4 +46,4 @@ function ListaCompleta() {
     )
 }
 
-export default ListaCompleta;
+export default ListaBotao;
