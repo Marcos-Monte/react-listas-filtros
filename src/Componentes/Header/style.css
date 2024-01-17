@@ -5,7 +5,8 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 2em
+    gap: 2em;
+    text-align: center;
 }
 
 .link {
@@ -20,4 +21,12 @@ header {
 
 .link:hover {
     color: aquamarine;
+}
+
+/* Media */
+
+@media (max-width: 600px) {
+    .link {
+        font-size: 18px;
+    }
 }

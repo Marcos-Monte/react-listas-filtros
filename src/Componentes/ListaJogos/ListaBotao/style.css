@@ -50,5 +50,5 @@
 .botao:active,
 .botao-limpar:active {
     background-color: grey;
-    color: black
+    color: black;
 }

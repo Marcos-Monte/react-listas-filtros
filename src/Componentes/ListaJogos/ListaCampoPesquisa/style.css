@@ -1,0 +1,26 @@
+.container-pesquisa {
+    margin-top: 2em;
+    width: 100%;
+    background-color: black;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.container-pesquisa img {
+    width: 40px;
+    padding: .5em;
+}
+
+.container-pesquisa input {
+    width: 90%;
+    padding-left: 1em;
+    background-color: transparent;
+    border: 0;
+    outline: none;
+    color: white;
+}
+
+.container-pesquisa input::selection {
+    border: none;
+}

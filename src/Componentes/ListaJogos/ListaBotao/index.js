@@ -15,28 +15,15 @@ function ListaBotao() {
     function filtrarJogo(filtro) {
 
         // Se a 'filtragem' for feita, executar o bloco de código
-        if (filtro) {
+        // 'State' da variável de estado recebe          
+        // Lista de Jogos filtrada 
+        // comparação feita em cada jogo da lsita
+        // propriedade 'plataforma' é identica a opção de filtro do usuário
+        // Se o filtro, indicado pelo usuário estiver vazio. A lista completa deve aparecer
+        // Condicional Ternária.
+        filtro ? setListaJogos(jogosExclusivos.filter((jogo) => jogo.plataforma === filtro)) : setListaJogos(jogosExclusivos)
 
-            // 'State' da variável de estado recebe
-            setListaJogos(
 
-                // Lista de Jogos filtrada 
-                jogosExclusivos.filter(
-
-                    // comparação feita em cada jogo da lsita
-                    // propriedade 'plataforma' é identica a opção de filtro do usuário
-                    (jogo) => jogo.plataforma === filtro
-
-                )
-
-            )
-
-        } else {
-
-            // Se o filtro, indicado pelo usuário estiver vazio. A lista completa deve aparecer
-            setListaJogos(jogosExclusivos);
-
-        }
 
     }
 
