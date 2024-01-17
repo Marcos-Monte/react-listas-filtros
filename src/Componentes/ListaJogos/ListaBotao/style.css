@@ -1,0 +1,54 @@
+.container-botoes {
+    margin-top: 2em;
+    width: 100%;
+    padding: .5em;
+    display: flex;
+    flex-direction: column;
+    gap: .5em;
+    background-color: black;
+    border-radius: 10px;
+}
+
+.botoes-plataformas {
+    display: flex;
+    gap: .5em;
+}
+
+.botao {
+    width: calc(100% / 3);
+    box-sizing: border-box;
+    height: 80px;
+    border: none;
+    color: #fff;
+    font-size: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.botao-limpar {
+    height: 80px;
+    font-size: 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.xbox {
+    background-color: green;
+}
+
+.play {
+    background-color: blue;
+}
+
+.nintendo {
+    background-color: red;
+}
+
+/* Evento CLique */
+
+.botao:active,
+.botao-limpar:active {
+    background-color: grey;
+    color: black
+}
