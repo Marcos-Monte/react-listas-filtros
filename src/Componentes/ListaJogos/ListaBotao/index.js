@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import jogosExclusivos from '../../../Dados';
 import ItemJogos from '../../ItemJogos';
 
-import Header from '../../Header';
 
 import './style.css';
 
@@ -29,7 +28,7 @@ function ListaBotao() {
 
     return (
         <div>
-            <Header />
+            {/* <Header /> */}
 
             <div className="lista">
 

@@ -2,7 +2,6 @@ import React from 'react';
 import jogosExclusivos from '../../../Dados';
 import ItemJogos from '../../ItemJogos';
 
-import Header from '../../Header';
 
 import './style.css';
 
@@ -10,7 +9,7 @@ function ListaCompleta() {
 
     return (
         <div>
-            <Header />
+            {/* <Header /> */}
 
             <div className="lista">
 
