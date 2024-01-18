@@ -1,7 +1,7 @@
 .container-pesquisa {
     margin-top: 2em;
     width: 100%;
-    background-color: black;
+    background-color: var(--fundo-jogo);
     border-radius: 20px;
     display: flex;
     align-items: center;
@@ -18,7 +18,7 @@
     background-color: transparent;
     border: 0;
     outline: none;
-    color: white;
+    color: var(--fonte-jogo);
 }
 
 .container-pesquisa input::selection {

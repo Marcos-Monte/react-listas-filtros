@@ -8,35 +8,33 @@ import './style.css';
 function ListaCompleta() {
 
     return (
-        <div>
-            {/* <Header /> */}
 
-            <div className="lista">
 
-                <h1 className="lista-titulo">
-                    Lista de Jogos Exclusivos
-                </h1>
+        <div className="lista">
 
-                <div className="lista-conteudo">
+            <h1 className="lista-titulo">
+                Lista de Jogos Exclusivos
+            </h1>
 
-                    {
-                        jogosExclusivos.map(
-                            (jogo) => (
+            <div className="lista-conteudo">
 
-                                <ItemJogos
-                                    key={jogo.id}
+                {
+                    jogosExclusivos.map(
+                        (jogo) => (
 
-                                    nome={jogo.nome}
-                                    plataforma={jogo.plataforma}
-                                />
-                            )
+                            <ItemJogos
+                                key={jogo.id}
 
+                                nome={jogo.nome}
+                                plataforma={jogo.plataforma}
+                            />
                         )
-                    }
 
-                </div>
+                    )
+                }
 
             </div>
+
         </div>
     )
 }

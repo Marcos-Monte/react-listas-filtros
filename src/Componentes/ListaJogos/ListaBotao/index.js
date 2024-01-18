@@ -27,49 +27,47 @@ function ListaBotao() {
     }
 
     return (
-        <div>
-            {/* <Header /> */}
 
-            <div className="lista">
+        <div className="lista">
 
-                <h1 className="lista-titulo">
-                    Lista de Jogos Exclusivos
-                </h1>
+            <h1 className="lista-titulo">
+                Lista de Jogos Exclusivos
+            </h1>
 
-                <div className="container-botoes">
+            <div className="container-botoes">
 
-                    <div className="botoes-plataformas">
-                        {/* Cara botão recebe a  */}
-                        <button className="botao xbox" onClick={() => filtrarJogo('xbox')}>Xbox</button>
-                        <button className="botao play" onClick={() => filtrarJogo('playstation')}>Playstation</button>
-                        <button className="botao nintendo" onClick={() => filtrarJogo('nintendo')}>Nintendo</button>
-                    </div>
-
-                    <button className="botao-limpar" onClick={() => filtrarJogo()}>Limpar Busca</button>
-
+                <div className="botoes-plataformas">
+                    {/* Cara botão recebe a  */}
+                    <button className="botao xbox" onClick={() => filtrarJogo('xbox')}>Xbox</button>
+                    <button className="botao play" onClick={() => filtrarJogo('playstation')}>Playstation</button>
+                    <button className="botao nintendo" onClick={() => filtrarJogo('nintendo')}>Nintendo</button>
                 </div>
 
-                <div className="lista-conteudo">
-
-                    {
-                        // Recebe variável de estado como 'array' para executar a função nativa '.map'
-                        listaJogos.map(
-                            (jogo) => (
-
-                                <ItemJogos
-                                    key={jogo.id}
-                                    nome={jogo.nome}
-                                    plataforma={jogo.plataforma}
-                                />
-                            )
-
-                        )
-                    }
-
-                </div>
+                <button className="botao-limpar" onClick={() => filtrarJogo()}>Limpar Busca</button>
 
             </div>
+
+            <div className="lista-conteudo">
+
+                {
+                    // Recebe variável de estado como 'array' para executar a função nativa '.map'
+                    listaJogos.map(
+                        (jogo) => (
+
+                            <ItemJogos
+                                key={jogo.id}
+                                nome={jogo.nome}
+                                plataforma={jogo.plataforma}
+                            />
+                        )
+
+                    )
+                }
+
+            </div>
+
         </div>
+
     )
 }
 

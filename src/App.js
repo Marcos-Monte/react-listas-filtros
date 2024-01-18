@@ -10,34 +10,37 @@ import ListaCompleta from './Componentes/ListaJogos/ListaCompleta';
 
 function App() {
 
-  const [estilo, setEstilo] = useState('light');
+  const claro = 'light';
+  const escuro = 'dark';
+
+  const [estilo, setEstilo] = useState(false);
 
   function alterarEstilo() {
 
-    if (estilo === 'light') {
-      setEstilo('dark')
-    } else {
-      setEstilo('light')
-    }
+    setEstilo(!estilo)
 
 
   }
 
   return (
 
-    <div className={`App ${estilo}`}>
+    <div className={`App ${estilo ? escuro : claro}`}>
 
       <BrowserRouter>
+
         <Header
-          estilo={estilo}
+          estilo={estilo ? claro : escuro}
           trocarEstilo={alterarEstilo}
         />
+
         <Routes>
           <Route exact path="/" element={<ListaCompleta />} />
           <Route path="/botao" element={<ListaBotao />} />
           <Route path="/pesquisa" element={<ListaCampoPesquisa />} />
         </Routes>
+
       </BrowserRouter>
+
     </div>
 
   );

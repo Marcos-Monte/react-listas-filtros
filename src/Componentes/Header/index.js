@@ -10,8 +10,8 @@ const Header = (props) => (
 
         <div className="container-links">
             <Link className="link" to='/'>Completa</Link>
-            <Link className="link" to='/botao'>Filtro-Botão</Link>
-            <Link className="link" to='/pesquisa'>Campo-Pesquisa</Link>
+            <Link className="link" to='/botao'>Filtro Botão</Link>
+            <Link className="link" to='/pesquisa'>Campo Pesquisa</Link>
         </div>
 
     </header>

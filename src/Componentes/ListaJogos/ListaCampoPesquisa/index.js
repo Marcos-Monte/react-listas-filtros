@@ -59,64 +59,64 @@ function ListaCampoPesquisa() {
 
 
     return (
-        <div>
-            {/* <Header /> */}
 
-            <div className="lista">
 
-                <h1 className="lista-titulo">
-                    Lista de Jogos Exclusivos
-                </h1>
 
-                <div className="container-botoes">
+        <div className="lista">
 
-                    <div className="botoes-plataformas">
-                        <button className="botao xbox" onClick={() => filtrarBotao('xbox')}>Xbox</button>
-                        <button className="botao play" onClick={() => filtrarBotao('playstation')}>Playstation</button>
-                        <button className="botao nintendo" onClick={() => filtrarBotao('nintendo')}>Nintendo</button>
-                    </div>
+            <h1 className="lista-titulo">
+                Lista de Jogos Exclusivos
+            </h1>
 
-                    <button className="botao-limpar" onClick={() => limparBotao()}>Limpar Busca</button>
+            <div className="container-botoes">
 
+                <div className="botoes-plataformas">
+                    <button className="botao xbox" onClick={() => filtrarBotao('xbox')}>Xbox</button>
+                    <button className="botao play" onClick={() => filtrarBotao('playstation')}>Playstation</button>
+                    <button className="botao nintendo" onClick={() => filtrarBotao('nintendo')}>Nintendo</button>
                 </div>
 
-                <div className="container-pesquisa">
-
-                    <img src={ImagemLupa} alt="lupa" />
-
-                    <input
-                        type="text"
-                        placeholder="Pesquisa um jogo ou plataforma"
-
-                        // Evento que capta letra por letra que o usuario escreve
-                        onChange={(event) => buscarJogo(event.target.value)}
-
-                        // Campo de busca recebe o valor do 'State'
-                        value={textoBusca}
-                    />
-
-                </div>
-
-                <div className="lista-conteudo">
-
-                    {
-                        listaJogos.map(
-                            (jogo) => (
-
-                                <ItemJogos
-                                    key={jogo.id}
-                                    nome={jogo.nome}
-                                    plataforma={jogo.plataforma}
-                                />
-                            )
-
-                        )
-                    }
-
-                </div>
+                <button className="botao-limpar" onClick={() => limparBotao()}>Limpar Busca</button>
 
             </div>
+
+            <div className="container-pesquisa">
+
+                <img src={ImagemLupa} alt="lupa" />
+
+                <input
+                    type="text"
+                    placeholder="Pesquisa um jogo ou plataforma"
+
+                    // Evento que capta letra por letra que o usuario escreve
+                    onChange={(event) => buscarJogo(event.target.value)}
+
+                    // Campo de busca recebe o valor do 'State'
+                    value={textoBusca}
+                />
+
+            </div>
+
+            <div className="lista-conteudo">
+
+                {
+                    listaJogos.map(
+                        (jogo) => (
+
+                            <ItemJogos
+                                key={jogo.id}
+                                nome={jogo.nome}
+                                plataforma={jogo.plataforma}
+                            />
+                        )
+
+                    )
+                }
+
+            </div>
+
         </div>
+
     )
 }
 

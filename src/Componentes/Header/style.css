@@ -5,11 +5,12 @@ header,
     justify-content: center;
     align-items: center;
     gap: 1.5em;
+    text-align: center;
 }
 
 header {
     flex-direction: column;
-    background-color: rebeccapurple;
+    background-color: var(--fundo-topo);
     padding: 2em 0;
 }
 
@@ -21,9 +22,9 @@ header {
     font-size: 20px;
     text-transform: capitalize;
     font-weight: bold;
-    background-color: blueviolet;
-    border: solid grey;
-
+    background-color: var(--cor-botao);
+    border: solid var(--borda-botao);
+    color: var(--cor-fonte-botao)
 }
 
 .link {
@@ -31,19 +32,20 @@ header {
     text-transform: uppercase;
     font-weight: bold;
     font-size: 22px;
-    color: dimgray
+    color: var(--cor-link);
+    text-decoration: underline;
 }
 
 /* Hover */
 
 .link:hover {
-    color: aquamarine;
+    color: var(--destaque-link);
 }
 
 /* Media */
 
 @media (max-width: 600px) {
     .link {
-        font-size: 18px;
+        font-size: 14px;
     }
 }
