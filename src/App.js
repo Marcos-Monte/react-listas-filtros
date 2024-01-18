@@ -8,6 +8,7 @@ import ListaBotao from './Componentes/ListaJogos/ListaBotao';
 import ListaCampoPesquisa from './Componentes/ListaJogos/ListaCampoPesquisa';
 import ListaCompleta from './Componentes/ListaJogos/ListaCompleta';
 
+
 function App() {
 
   const claro = 'light';
@@ -29,6 +30,7 @@ function App() {
       <BrowserRouter>
 
         <Header
+          imagemBotao={estilo}
           estilo={estilo ? claro : escuro}
           trocarEstilo={alterarEstilo}
         />
