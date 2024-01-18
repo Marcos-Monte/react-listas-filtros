@@ -5,15 +5,12 @@
 }
 
 .App {
-    height: 100%;
-    width: 100%;
     min-width: 375px;
     background-color: var(--fundo);
 }
 
 
 .light {
-    height: 100%;
     --fundo: #fff;
     --fundo-topo: #663399;
     --cor-botao: #8a2be2;
@@ -29,7 +26,6 @@
 }
 
 .dark {
-    height: 100%;
     --fundo: #252525;
     --fundo-topo: #181818;
     --cor-botao: #3b0e66;

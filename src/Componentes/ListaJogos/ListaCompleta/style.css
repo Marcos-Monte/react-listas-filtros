@@ -15,4 +15,5 @@
     flex-direction: column;
     gap: 1em;
     margin: 2em 0;
+    box-sizing: border-box;
 }

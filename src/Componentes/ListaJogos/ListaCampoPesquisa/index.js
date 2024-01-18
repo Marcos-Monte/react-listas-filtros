@@ -38,11 +38,13 @@ function ListaCampoPesquisa() {
     // Função que recebe 'String' do Input de Busca do usuário
     function buscarJogo(textoUsuario) {
 
+
         // Se o 'State' não receber o valor do Input, a escrita não aparece no campo enquanto o usuário escreve
         setTextoBusca(textoUsuario);
 
         // State da Lista de Jogos recebe
         setListaJogos(
+
 
             // Coleção de jogos filtrada em cada jogo
             jogosExclusivos.filter((jogo) =>
