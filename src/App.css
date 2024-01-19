@@ -5,6 +5,8 @@
 }
 
 .App {
+    height: 100vh;
+    min-height: 1550px;
     min-width: 375px;
     background-color: var(--fundo);
 }

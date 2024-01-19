@@ -15,10 +15,13 @@ function ListaCampoPesquisa() {
     const [textoBusca, setTextoBusca] = useState("");
 
     function filtrarBotao(filtro) {
+
         setListaJogos(
+
             jogosExclusivos.filter(
                 (jogo) => jogo.plataforma === filtro
             )
+
         )
 
         // Sempre que um botão que tenha esse 'evento Click' for acionado:
