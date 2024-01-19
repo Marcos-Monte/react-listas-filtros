@@ -1,11 +1,13 @@
 import React from 'react';
-import jogosExclusivos from '../../../Dados';
 import ItemJogos from '../../ItemJogos';
-
 
 import './style.css';
 
+import { retornarJogos } from '../../../Servico';
+
 function ListaCompleta() {
+
+    const listaJogos = retornarJogos();
 
     return (
 
@@ -19,12 +21,11 @@ function ListaCompleta() {
             <div className="lista-conteudo">
 
                 {
-                    jogosExclusivos.map(
+                    listaJogos.map(
                         (jogo) => (
 
                             <ItemJogos
                                 key={jogo.id}
-
                                 nome={jogo.nome}
                                 plataforma={jogo.plataforma}
                             />

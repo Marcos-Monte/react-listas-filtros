@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import jogosExclusivos from '../../../Dados';
 import ItemJogos from '../../ItemJogos';
+
+import { filtrarJogo, retornarJogos } from '../../../Servico';
 
 
 import './style.css';
@@ -8,21 +9,12 @@ import './style.css';
 function ListaBotao() {
 
     // Variavel de Estado que recebe a coleção de dados 
-    const [listaJogos, setListaJogos] = useState(jogosExclusivos);
+    const [listaJogos, setListaJogos] = useState(retornarJogos());
 
     // Função que filtra baseado na ação do usuário
-    function filtrarJogo(filtro) {
+    function handleFiltrarJogo(filtro) {
 
-        // Se a 'filtragem' for feita, executar o bloco de código
-        // 'State' da variável de estado recebe          
-        // Lista de Jogos filtrada 
-        // comparação feita em cada jogo da lsita
-        // propriedade 'plataforma' é identica a opção de filtro do usuário
-        // Se o filtro, indicado pelo usuário estiver vazio. A lista completa deve aparecer
-        // Condicional Ternária.
-        filtro ? setListaJogos(jogosExclusivos.filter((jogo) => jogo.plataforma === filtro)) : setListaJogos(jogosExclusivos)
-
-
+        filtro ? setListaJogos(filtrarJogo(filtro)) : setListaJogos(retornarJogos())
 
     }
 
@@ -38,12 +30,12 @@ function ListaBotao() {
 
                 <div className="botoes-plataformas">
                     {/* Cara botão recebe a  */}
-                    <button className="botao xbox" onClick={() => filtrarJogo('xbox')}>Xbox</button>
-                    <button className="botao play" onClick={() => filtrarJogo('playstation')}>Playstation</button>
-                    <button className="botao nintendo" onClick={() => filtrarJogo('nintendo')}>Nintendo</button>
+                    <button className="botao xbox" onClick={() => handleFiltrarJogo('xbox')}>Xbox</button>
+                    <button className="botao play" onClick={() => handleFiltrarJogo('playstation')}>Playstation</button>
+                    <button className="botao nintendo" onClick={() => handleFiltrarJogo('nintendo')}>Nintendo</button>
                 </div>
 
-                <button className="botao-limpar" onClick={() => filtrarJogo()}>Limpar Busca</button>
+                <button className="botao-limpar" onClick={() => handleFiltrarJogo()}>Limpar Busca</button>
 
             </div>
 

@@ -1,71 +1,40 @@
 import React, { useState } from 'react';
-import jogosExclusivos from '../../../Dados';
+import ImagemLupa from '../../../assets/lupa.png';
 import ItemJogos from '../../ItemJogos';
 
+import { buscarJogo, filtrarJogo, retornarJogos } from '../../../Servico';
 
 import './style.css';
 
-import ImagemLupa from '../../../assets/lupa.png';
-
 function ListaCampoPesquisa() {
 
-    const [listaJogos, setListaJogos] = useState(jogosExclusivos);
+    const [listaJogos, setListaJogos] = useState(retornarJogos());
 
-    // Variavel de Estado com valor 'vazio'
     const [textoBusca, setTextoBusca] = useState("");
 
-    function filtrarBotao(filtro) {
+    function handleFiltrarBotao(filtro) {
 
-        setListaJogos(
-
-            jogosExclusivos.filter(
-                (jogo) => jogo.plataforma === filtro
-            )
-
-        )
-
-        // Sempre que um botão que tenha esse 'evento Click' for acionado:
-        // O valor do 'input' de pesquisa será apagado
+        setListaJogos(filtrarJogo(filtro))
         setTextoBusca("")
     }
 
     // Função atribuída ao botão de limpar pesquisa
     function limparBotao() {
 
-        setListaJogos(jogosExclusivos)
-        // Sempre que um botão que tenha esse 'evento Click' for acionado:
-        // O valor do 'input' de pesquisa será apagado
+        setListaJogos(retornarJogos())
         setTextoBusca("")
     }
 
     // Função que recebe 'String' do Input de Busca do usuário
-    function buscarJogo(textoUsuario) {
+    function handleBuscarJogo(textoUsuario) {
 
-
-        // Se o 'State' não receber o valor do Input, a escrita não aparece no campo enquanto o usuário escreve
         setTextoBusca(textoUsuario);
 
-        // State da Lista de Jogos recebe
-        setListaJogos(
+        setListaJogos(buscarJogo(textoUsuario))
 
-
-            // Coleção de jogos filtrada em cada jogo
-            jogosExclusivos.filter((jogo) =>
-
-                // Verificando em, uma OU outra, propriedades de cada jogo (nome e plataforma) 
-                // Se o que o 'usuario está digitando' existe dentro delas.
-                jogo.nome.toLowerCase().includes(textoUsuario.toLowerCase()) ||
-                jogo.plataforma.toLowerCase().includes(textoUsuario.toLowerCase())
-
-            )
-
-        )
     }
 
-
     return (
-
-
 
         <div className="lista">
 
@@ -76,9 +45,9 @@ function ListaCampoPesquisa() {
             <div className="container-botoes">
 
                 <div className="botoes-plataformas">
-                    <button className="botao xbox" onClick={() => filtrarBotao('xbox')}>Xbox</button>
-                    <button className="botao play" onClick={() => filtrarBotao('playstation')}>Playstation</button>
-                    <button className="botao nintendo" onClick={() => filtrarBotao('nintendo')}>Nintendo</button>
+                    <button className="botao xbox" onClick={() => handleFiltrarBotao('xbox')}>Xbox</button>
+                    <button className="botao play" onClick={() => handleFiltrarBotao('playstation')}>Playstation</button>
+                    <button className="botao nintendo" onClick={() => handleFiltrarBotao('nintendo')}>Nintendo</button>
                 </div>
 
                 <button className="botao-limpar" onClick={() => limparBotao()}>Limpar Busca</button>
@@ -94,7 +63,7 @@ function ListaCampoPesquisa() {
                     placeholder="Pesquisa um jogo ou plataforma"
 
                     // Evento que capta letra por letra que o usuario escreve
-                    onChange={(event) => buscarJogo(event.target.value)}
+                    onChange={(event) => handleBuscarJogo(event.target.value)}
 
                     // Campo de busca recebe o valor do 'State'
                     value={textoBusca}
