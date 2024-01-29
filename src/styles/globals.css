@@ -1,0 +1,63 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.body {
+    height: 100vh;
+    min-height: 1550px;
+    min-width: 375px;
+    background-color: var(--fundo);
+}
+
+.lista {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 2em 0;
+}
+
+.lista-titulo {
+    font-size: 42px;
+    color: var(--cor-fonte-botao)
+}
+
+.lista-conteudo {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    margin: 2em 0;
+    box-sizing: border-box;
+}
+
+
+.light {
+    --fundo: #fff;
+    --fundo-topo: #663399;
+    --cor-botao: #8a2be2;
+    --borda-botao: #808080;
+    --cor-link: #c0b9b9;
+    --destaque-link: #7fffd4;
+    --fonte-jogo: #fff;
+    --fundo-jogo: #000;
+    --xbox: #008000;
+    --play: #0000ff;
+    --nintendo: #ff0000;
+    --cor-fonte-botao: #000;
+}
+
+.dark {
+    --fundo: #252525;
+    --fundo-topo: #181818;
+    --cor-botao: #3b0e66;
+    --borda-botao: #808080;
+    --cor-link: #c0b9b9;
+    --destaque-link: #7fffd4;
+    --fonte-jogo: #fff;
+    --fundo-jogo: #000;
+    --xbox: #008000;
+    --play: #0000ff;
+    --nintendo: #ff0000;
+    --cor-fonte-botao: #fff;
+}

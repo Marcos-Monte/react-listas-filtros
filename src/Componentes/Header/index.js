@@ -1,24 +1,30 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import Image from 'next/image';
 
-import Lua from '../../assets/moon.png';
-import Sol from '../../assets/sun.png';
+import Link from 'next/link';
+
+import Lua from '../../../public/assets/moon.png';
+import Sol from '../../../public/assets/sun.png';
 
 
-import './style.css';
+import style from './style.module.css';
 
 const Header = (props) => (
-    <header>
-        <button className="botao-topo" onClick={props.trocarEstilo}>
 
-            <img src={props.imagemBotao ? Sol : Lua} alt="Imagem que refere ao estilo de cores do site" />
+    <header className={style.topo}>
+        <button className={style.botao_topo} onClick={props.trocarEstilo}>
+
+            <Image
+                className={style.imagem}
+                src={props.imagemBotao ? Sol : Lua}
+                alt="Imagem que refere ao estilo de cores do site"
+            />
 
         </button>
 
-        <div className="container-links">
-            <Link className="link" to='/'>Completa</Link>
-            <Link className="link" to='/botao'>Filtro Botão</Link>
-            <Link className="link" to='/pesquisa'>Campo Pesquisa</Link>
+        <div className={style.container_links}>
+            <Link className={style.link} href='/'>Completa</Link>
+            <Link className={style.link} href='/listaBotao'>Filtro Botão</Link>
+            <Link className={style.link} href='/listaPesquisa'>Campo Pesquisa</Link>
         </div>
 
     </header>

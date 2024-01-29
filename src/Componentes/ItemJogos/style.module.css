@@ -1,0 +1,35 @@
+.jogo {
+    display: flex;
+    align-items: center;
+    height: 80px;
+    width: 100%;
+}
+
+.jogo_logo {
+    height: 100%;
+    width: auto
+}
+
+.jogo_nome {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: var(--fundo-jogo);
+    width: 100%;
+    height: 100%;
+}
+
+.jogo_nome p {
+    font-size: 25px;
+    font-weight: bold;
+    padding-left: .5em;
+    color: var(--fonte-jogo);
+}
+
+/* Hover */
+
+.jogo:hover {
+    transition: 1.5s;
+    margin: 1em 0;
+    box-shadow: 0px 0px 20px 10px var(--borda-botao);
+}

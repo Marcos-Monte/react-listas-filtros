@@ -1,0 +1,56 @@
+.topo,
+.container_links {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5em;
+    text-align: center;
+}
+
+.topo {
+    flex-direction: column;
+    background-color: var(--fundo-topo);
+    padding: 2em 0;
+}
+
+.botao_topo {
+    width: 80px;
+    height: 80px;
+    padding: .5em;
+    border-radius: 50px;
+    font-size: 20px;
+    text-transform: capitalize;
+    font-weight: bold;
+    background-color: var(--cor-botao);
+    border: solid var(--borda-botao);
+    color: var(--cor-fonte-botao)
+}
+
+.imagem {
+    width: 100%;
+    height: auto;
+}
+
+.link {
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 22px;
+    color: var(--cor-link);
+    text-decoration: underline;
+}
+
+/* Hover */
+
+.link:hover {
+    color: var(--destaque-link);
+}
+
+/* Media */
+
+@media (max-width: 600px) {
+    .link {
+        font-size: 14px;
+    }
+}

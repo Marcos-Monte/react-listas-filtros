@@ -1,0 +1,27 @@
+.container_pesquisa {
+    margin-top: 2em;
+    width: 100%;
+    background-color: var(--fundo-jogo);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.imagem {
+    width: 40px;
+    height: auto;
+    padding: .5em;
+}
+
+.container_pesquisa input {
+    width: 90%;
+    padding-left: 1em;
+    background-color: transparent;
+    border: 0;
+    outline: none;
+    color: var(--fonte-jogo);
+}
+
+.container_pesquisa input::selection {
+    border: none;
+}

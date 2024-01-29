@@ -1,10 +1,12 @@
 import React from 'react';
 
-import LogoNintendo from '../../assets/nintendo.jpg';
-import LogoPlay from '../../assets/playstation.jpg';
-import LogoXbox from '../../assets/xbox.png';
+import Image from 'next/image';
 
-import './style.css';
+import LogoNintendo from '../../../public/assets/nintendo.jpg';
+import LogoPlay from '../../../public/assets/playstation.jpg';
+import LogoXbox from '../../../public/assets/xbox.png';
+
+import style from './style.module.css';
 
 function ItemJogos({ nome, plataforma }) {
 
@@ -24,11 +26,11 @@ function ItemJogos({ nome, plataforma }) {
 
     return (
 
-        <div className="jogo">
+        <div className={style.jogo}>
 
-            <img className="jogo-logo" src={imagem(plataforma)} title={plataforma} alt={`Logotipo da plataforma ${plataforma}`} />
+            <Image className={style.jogo_logo} src={imagem(plataforma)} title={plataforma} alt={`Logotipo da plataforma ${plataforma}`} />
 
-            <div className="jogo-nome">
+            <div className={style.jogo_nome}>
                 <p>{nome}</p>
             </div>
 
