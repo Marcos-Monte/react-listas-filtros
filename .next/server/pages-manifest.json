@@ -3,6 +3,5 @@
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
   "/": "pages/index.js",
-  "/listaBotao": "pages/listaBotao.js",
   "/listaPesquisa": "pages/listaPesquisa.js"
 }

@@ -22,9 +22,9 @@ const Header = (props) => (
         </button>
 
         <div className={style.container_links}>
-            <Link className={style.link} href='/'>Completa</Link>
-            <Link className={style.link} href='/listaBotao'>Filtro Botão</Link>
-            <Link className={style.link} href='/listaPesquisa'>Campo Pesquisa</Link>
+            <Link className={style.link} href='/'>Lista Completa</Link>
+            <Link className={style.link} href='/listaBotao'>Filtragem de Categorias</Link>
+            <Link className={style.link} href='/listaPesquisa'>Pesquisa Avançada</Link>
         </div>
 
     </header>
