@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import Lista from '@/Componentes/Lista';
+import { useState } from 'react';
 import ItemJogos from '../Componentes/ItemJogos';
 
 import { filtrarJogo, retornarJogos } from '../Servico';
@@ -20,45 +21,48 @@ function ListaBotao() {
 
     return (
 
-        <div className="lista">
 
-            <h1 className="lista-titulo">
-                Lista de Jogos Exclusivos
-            </h1>
+        <Lista>
+            {
+                <>
+                    <div className={style.container_botoes}>
 
-            <div className={style.container_botoes}>
+                        <div className={style.botoes_plataformas}>
+                            {/* Cara botão recebe a  */}
+                            <button className={`${style.botao} ${style.xbox}`} onClick={() => handleFiltrarJogo('xbox')}>Xbox</button>
+                            <button className={`${style.botao} ${style.play}`} onClick={() => handleFiltrarJogo('playstation')}>Playstation</button>
+                            <button className={`${style.botao} ${style.nintendo}`} onClick={() => handleFiltrarJogo('nintendo')}>Nintendo</button>
+                        </div>
 
-                <div className={style.botoes_plataformas}>
-                    {/* Cara botão recebe a  */}
-                    <button className={`${style.botao} ${style.xbox}`} onClick={() => handleFiltrarJogo('xbox')}>Xbox</button>
-                    <button className={`${style.botao} ${style.play}`} onClick={() => handleFiltrarJogo('playstation')}>Playstation</button>
-                    <button className={`${style.botao} ${style.nintendo}`} onClick={() => handleFiltrarJogo('nintendo')}>Nintendo</button>
-                </div>
+                        <button className={style.botao_limpar} onClick={() => handleFiltrarJogo()}>Limpar Busca</button>
 
-                <button className={style.botao_limpar} onClick={() => handleFiltrarJogo()}>Limpar Busca</button>
+                    </div>
 
-            </div>
+                    <div className="lista-conteudo">
+                        {
 
-            <div className="lista-conteudo">
+                            listaJogos.map(
+                                (jogo) => (
 
-                {
-                    // Recebe variável de estado como 'array' para executar a função nativa '.map'
-                    listaJogos.map(
-                        (jogo) => (
+                                    <ItemJogos
+                                        key={jogo.id}
+                                        nome={jogo.nome}
+                                        plataforma={jogo.plataforma}
+                                    />
+                                )
 
-                            <ItemJogos
-                                key={jogo.id}
-                                nome={jogo.nome}
-                                plataforma={jogo.plataforma}
-                            />
-                        )
+                            )
+                        }
+                    </div>
 
-                    )
-                }
+                </>}
+        </Lista>
 
-            </div>
 
-        </div>
+
+
+
+
 
     )
 }

@@ -1,41 +1,33 @@
-import React from 'react';
+import Lista from '@/Componentes/Lista';
 import ItemJogos from '../Componentes/ItemJogos';
 
 import { retornarJogos } from '../Servico';
 
-function ListaCompleta() {
 
-    const listaJogos = retornarJogos();
+export default function Home() {
 
-    return (
+  const listaJogos = retornarJogos();
+
+  return (
+    <main >
+
+      <Lista>
+        {
+          listaJogos.map(
+            (jogo) => (
+
+              <ItemJogos
+                key={jogo.id}
+                nome={jogo.nome}
+                plataforma={jogo.plataforma}
+              />
+            )
+
+          )
+        }
+      </Lista>
 
 
-        <div className="lista">
-
-            <h1 className="lista-titulo">
-                Lista de Jogos Exclusivos
-            </h1>
-
-            <div className="lista-conteudo">
-
-                {
-                    listaJogos.map(
-                        (jogo) => (
-
-                            <ItemJogos
-                                key={jogo.id}
-                                nome={jogo.nome}
-                                plataforma={jogo.plataforma}
-                            />
-                        )
-
-                    )
-                }
-
-            </div>
-
-        </div>
-    )
+    </main>
+  );
 }
-
-export default ListaCompleta;

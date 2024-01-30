@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import Lista from '@/Componentes/Lista';
+import { useState } from 'react';
 import ImagemLupa from '../../public/assets/lupa.png';
 import ItemJogos from '../Componentes/ItemJogos';
 
@@ -39,64 +40,57 @@ function ListaCampoPesquisa() {
 
     return (
 
-        <div className="lista">
+        <Lista>
+            <>
+                <div className={styleBotao.container_botoes}>
 
-            <h1 className="lista-titulo">
-                Lista de Jogos Exclusivos
-            </h1>
+                    <div className={styleBotao.botoes_plataformas}>
+                        {/* Cara botão recebe a  */}
+                        <button className={`${styleBotao.botao} ${styleBotao.xbox}`} onClick={() => handleFiltrarBotao('xbox')}>Xbox</button>
+                        <button className={`${styleBotao.botao} ${styleBotao.play}`} onClick={() => handleFiltrarBotao('playstation')}>Playstation</button>
+                        <button className={`${styleBotao.botao} ${styleBotao.nintendo}`} onClick={() => handleFiltrarBotao('nintendo')}>Nintendo</button>
+                    </div>
 
-            <div className={styleBotao.container_botoes}>
+                    <button className={styleBotao.botao_limpar} onClick={() => limparBotao()}>Limpar Busca</button>
 
-                <div className={styleBotao.botoes_plataformas}>
-                    {/* Cara botão recebe a  */}
-                    <button className={`${styleBotao.botao} ${styleBotao.xbox}`} onClick={() => handleFiltrarBotao('xbox')}>Xbox</button>
-                    <button className={`${styleBotao.botao} ${styleBotao.play}`} onClick={() => handleFiltrarBotao('playstation')}>Playstation</button>
-                    <button className={`${styleBotao.botao} ${styleBotao.nintendo}`} onClick={() => handleFiltrarBotao('nintendo')}>Nintendo</button>
                 </div>
 
-                <button className={styleBotao.botao_limpar} onClick={() => limparBotao()}>Limpar Busca</button>
+                <div className={style.container_pesquisa}>
 
-            </div>
+                    <Image
+                        className={style.imagem}
+                        src={ImagemLupa} alt="lupa"
+                    />
 
-            <div className={style.container_pesquisa}>
+                    <input
+                        type="text"
+                        placeholder="Pesquisa um jogo ou plataforma"
 
-                <Image
-                    className={style.imagem}
-                    src={ImagemLupa} alt="lupa"
-                />
+                        onChange={(event) => handleBuscarJogo(event.target.value)}
 
-                <input
-                    type="text"
-                    placeholder="Pesquisa um jogo ou plataforma"
+                        value={textoBusca}
+                    />
 
-                    // Evento que capta letra por letra que o usuario escreve
-                    onChange={(event) => handleBuscarJogo(event.target.value)}
+                </div>
 
-                    // Campo de busca recebe o valor do 'State'
-                    value={textoBusca}
-                />
+                <div className="lista-conteudo">
 
-            </div>
+                    {
+                        listaJogos.map(
+                            (jogo) => (
 
-            <div className="lista-conteudo">
+                                <ItemJogos
+                                    key={jogo.id}
+                                    nome={jogo.nome}
+                                    plataforma={jogo.plataforma}
+                                />
+                            )
 
-                {
-                    listaJogos.map(
-                        (jogo) => (
-
-                            <ItemJogos
-                                key={jogo.id}
-                                nome={jogo.nome}
-                                plataforma={jogo.plataforma}
-                            />
                         )
+                    }
 
-                    )
-                }
-
-            </div>
-
-        </div>
+                </div></>
+        </Lista>
 
     )
 }
